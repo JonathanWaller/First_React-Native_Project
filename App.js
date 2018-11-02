@@ -1,7 +1,16 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
-export default class App extends React.Component {
+class Greeting extends Component {
+  render() {
+    return (
+      <Text>
+        Hello, my name is {this.props.name} and I am {this.props.age} years old!
+      </Text>
+    );
+  }
+}
+class App extends Component {
   render() {
     let pic = {
       uri:
@@ -13,6 +22,8 @@ export default class App extends React.Component {
         <Text>Hello World!</Text>
         <Text>Another Test</Text>
         <Image source={pic} style={{ width: 193, height: 110 }} />
+        <Greeting name="Timmy" age="25" />
+        <Greeting name="Samuel" age="11" />
       </View>
     );
   }
@@ -26,3 +37,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+export default App;
